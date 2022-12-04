@@ -1,0 +1,8 @@
+<html>
+    <h1>Hello World</h1>
+    <form action="create/" method="post">
+        {% csrf_token %}
+            {{form}}
+        <input type="submit" values="Submit">
+    </form>
+</html>
