@@ -1,8 +1,23 @@
-<html>
-    <h1>Guest List</h1>
-    {% for guest in guest_list %}
-        {{guest.name}}
-        {{guest.email_address}}
-        <br />
-    {% endfor %}
-</html>
+{% extends 'guests/base.html' %}
+{% load bootstrap5 %}
+
+{% block content %}
+    <div class="container">
+        <h2>Guest List</h2>
+        {% for guest in guest_list %}
+            <div class="row">
+                <div class="col-md-6">
+                    Name: {{guest.name}}
+                </div>
+                <div class="col-md-6">
+                    Email: {{guest.email_address}}
+                </div>
+            </div>
+            <div class="row">
+                <div col-md-12>
+                    Message: {{guest.message}}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

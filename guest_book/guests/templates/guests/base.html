@@ -1,0 +1,16 @@
+<html>
+    <head>
+        {% load static %}
+        {% load bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+        {% bootstrap_messages %}
+        <link rel="stylesheet" href="{% static 'guests/index.css' %}">
+        <title>Guest Book</title>
+    </head>
+    <body>
+        <h1>Guest Book App</h1>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
