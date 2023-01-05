@@ -1,10 +1,19 @@
-{% load static %}
-<link rel="stylesheet" href="{% static 'guests/index.css' %}">
-<html>
-    <h1>Hello World</h1>
-    <form action="create/" method="post">
-        {% csrf_token %}
-            {{form}}
-        <input type="submit" values="Submit">
-    </form>
-</html>
+{% extends 'guests/base.html' %}
+{% load bootstrap5 %}
+{% block content %}
+<div class="container">
+    <p>Enter name, email and message and then click the 'Submit' button</p>
+    <a href="list/" class="btn btn-primary">Go to Guest List</a>
+    <div class="row">
+        <div class="col-md-12">
+            <form action="create/" method="post">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                {% buttons %}
+                    <input type="submit" class="btn btn-success" values="Submit">
+                {% endbuttons %}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
